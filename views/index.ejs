@@ -1,0 +1,109 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluent in a Flip - Turkish-English Flashcard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif; /* Modern font for body text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient background */
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      height: 100vh;
+    }
+
+    #title-container {
+      margin-top: 10vh; /* Centered on the first line (10% from the top) */
+      font-family: 'Poppins', sans-serif; /* Poppins font for the title */
+      font-size: 36px; /* Increased title size */
+      color: #fff; /* White text color */
+    }
+
+    #flashcard-container {
+      width: 300px;
+      height: 200px;
+      margin-top: 24vh; /* Centered on the middle line (24% from the top) */
+      position: relative;
+      cursor: pointer;
+      perspective: 1000px; /* Perspective for 3D effect */
+    }
+
+    #flashcard-inner {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      border-radius: 8px; /* Slightly less rounded corners */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More noticeable shadow */
+    }
+
+    #flashcard-container.flip #flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    #flashcard-front,
+    #flashcard-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column; /* Display content in a column */
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px; /* Slightly less rounded corners */
+    }
+
+    #flashcard-front {
+      background-color: #3498db; /* Blue background color for front side */
+      color: #fff; /* White text color */
+      font-family: 'Poppins', sans-serif; /* Poppins font for card text */
+      font-size: 24px; /* Increased font size for card text */
+    }
+
+    #flashcard-back {
+      background-color: #2ecc71; /* Green background color for back side */
+      transform: rotateY(180deg);
+      color: #fff; /* White text color */
+      font-family: 'Poppins', sans-serif; /* Poppins font for card text */
+      font-size: 24px; /* Reduced font size for card text */
+    }
+
+    #flashcard-container p {
+      margin: 0;
+      padding: 10px;
+      font-size: 24px; /* Increased text size */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="title-container">Fluent in a Flip</div>
+
+  <div id="flashcard-container" onclick="flipFlashcard()">
+    <div id="flashcard-inner">
+      <div id="flashcard-front">
+        <p><%= word.word_tr %></p>
+      </div>
+      <div id="flashcard-back">
+        <p><%= word.word_tr %></p>
+        <p><%= word.word_en %></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function flipFlashcard() {
+      const flashcard = document.getElementById('flashcard-container');
+      flashcard.classList.toggle('flip');
+    }
+  </script>
+</body>
+</html>
