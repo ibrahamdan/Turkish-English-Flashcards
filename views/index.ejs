@@ -8,11 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Roboto', sans-serif; /* Modern font for body text */
+      font-family: 'Roboto', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: linear-gradient(135deg, #3498db, #2ecc71); /* Gradient background */
+      background: linear-gradient(135deg, #3498db, #2ecc71);
       background-size: cover;
       background-repeat: no-repeat;
       margin: 0;
@@ -20,19 +20,19 @@
     }
 
     #title-container {
-      margin-top: 10vh; /* Centered on the first line (10% from the top) */
-      font-family: 'Poppins', sans-serif; /* Poppins font for the title */
-      font-size: 36px; /* Increased title size */
-      color: #fff; /* White text color */
+      margin-top: 10vh;
+      font-family: 'Poppins', sans-serif;
+      font-size: 36px;
+      color: #fff;
     }
 
     #flashcard-container {
       width: 300px;
       height: 200px;
-      margin-top: 24vh; /* Centered on the middle line (24% from the top) */
+      margin-top: 24vh;
       position: relative;
       cursor: pointer;
-      perspective: 1000px; /* Perspective for 3D effect */
+      perspective: 1000px
     }
 
     #flashcard-inner {
@@ -40,8 +40,8 @@
       height: 100%;
       transform-style: preserve-3d;
       transition: transform 0.5s;
-      border-radius: 8px; /* Slightly less rounded corners */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More noticeable shadow */
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     #flashcard-container.flip #flashcard-inner {
@@ -55,31 +55,31 @@
       position: absolute;
       backface-visibility: hidden;
       display: flex;
-      flex-direction: column; /* Display content in a column */
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      border-radius: 8px; /* Slightly less rounded corners */
+      border-radius: 8px;
     }
 
     #flashcard-front {
-      background-color: #3498db; /* Blue background color for front side */
-      color: #fff; /* White text color */
-      font-family: 'Poppins', sans-serif; /* Poppins font for card text */
-      font-size: 24px; /* Increased font size for card text */
+      background-color: #3498db;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
     }
 
     #flashcard-back {
-      background-color: #2ecc71; /* Green background color for back side */
+      background-color: #2ecc71;
       transform: rotateY(180deg);
-      color: #fff; /* White text color */
-      font-family: 'Poppins', sans-serif; /* Poppins font for card text */
-      font-size: 24px; /* Reduced font size for card text */
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
     }
 
     #flashcard-container p {
       margin: 0;
       padding: 10px;
-      font-size: 24px; /* Increased text size */
+      font-size: 24px;
       text-align: center;
     }
   </style>
